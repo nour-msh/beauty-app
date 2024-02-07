@@ -1,11 +1,39 @@
-import {Text, View, Button} from "react-native";
-import {useRouter} from "expo-router";
 
-export default function Page() {
+import AppointmentCard from "../../../components/appointmentCard"
+import { ScrollView, StyleSheet, View,Text} from "react-native"
 
-  return (
-    <View style={{flex:1, justifyContent:"center", alignItems:'center'}}>
-        <Text style={{fontSize:30}}>Appointments Page</Text>
-    </View>
-  );
-}
+export default function Appointments() {
+
+    return (
+
+        <ScrollView>
+<View style={styles.appContainer}>
+
+            <AppointmentCard/>
+            <AppointmentCard/>
+            <AppointmentCard/>
+            <AppointmentCard/>
+            <AppointmentCard/>
+            <AppointmentCard/>
+            <AppointmentCard/>
+            <AppointmentCard/>
+            <AppointmentCard/>
+            <AppointmentCard/>
+            <AppointmentCard/>
+            <AppointmentCard/>
+            <AppointmentCard/>
+            <AppointmentCard/>
+
+</View>
+        </ScrollView>
+
+    )};
+
+const styles=StyleSheet.create({
+    appContainer:{
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center",top:100
+
+    }
+})

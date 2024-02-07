@@ -6,8 +6,8 @@ return(
 
             <View style={styles.appText}>
 
-                    <Text style={{fontWeight:600}}>Monday 17 January, 2024</Text>
-                    <Text style={{fontWeight:600}}>10:00 AM</Text>
+                    <Text style={{fontWeight:350}}>Monday 17 January, 2024</Text>
+                    <Text style={{fontWeight:350}}>10:00 AM</Text>
             </View>
 
             <View  style={styles.appText}>

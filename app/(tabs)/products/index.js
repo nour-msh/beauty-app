@@ -1,11 +1,109 @@
-import {Text, View, Button} from "react-native";
-import {useRouter} from "expo-router";
+import {Text, View, ScrollView, Button, StyleSheet,TouchableOpacity} from "react-native";
+import {useRouter, Link} from "expo-router";
+import Search from "../../../components/searchBar";
+import Product from "../../../components/productCard"
+import Box from "../../../components/box";
 
-export default function Page() {
 
+export default function Products() {
+const router= useRouter();
   return (
-    <View style={{flex:1, justifyContent:"center", alignItems:'center'}}>
-        <Text style={{fontSize:30}}>Products Page</Text>
+    <View>
+
+    <Box/>
+<View style={styles.container}>
+    <Search/>   
+
+    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
+<View style={styles.slider} > 
+<Button title="Lip Stick"
+  color="black" />
+  <Button title="Lip Tint"
+  color="black" />
+  <Button title="Eye Shadow"
+  color="black" />
+  <Button title="Mascara"
+  color="black" />
+
+</View>
+</ScrollView>
+    <Text style={{fontWeight:600}}>Products</Text>
+
+    <ScrollView showsVerticalScrollIndicator={false}>
+
+
+    <View style={styles.scroller}>
+
+    <TouchableOpacity onPress={()=>{ router.push("/products/productDetails")
+                }}>
+
+   <Product/>
+</TouchableOpacity> 
+    <TouchableOpacity onPress={()=>{ router.push("/products/productDetails")
+                }}>
+
+   <Product/>
+</TouchableOpacity> 
+    <TouchableOpacity onPress={()=>{ router.push("/products/productDetails")
+                }}>
+
+   <Product/>
+</TouchableOpacity> 
+    <TouchableOpacity onPress={()=>{ router.push("/products/productDetails")
+                }}>
+
+   <Product/>
+</TouchableOpacity> 
+    <TouchableOpacity onPress={()=>{ router.push("/products/productDetails")
+                }}>
+
+   <Product/>
+</TouchableOpacity> 
+    <TouchableOpacity onPress={()=>{ router.push("/products/productDetails")
+                }}>
+
+   <Product/>
+</TouchableOpacity> 
+    <TouchableOpacity onPress={()=>{ router.push("/products/productDetails")
+                }}>
+
+   <Product/>
+</TouchableOpacity> 
+    <TouchableOpacity onPress={()=>{ router.push("/products/productDetails")
+                }}>
+
+   <Product/>
+</TouchableOpacity> 
+
+
     </View>
-  );
+</ScrollView>
+</View>
+
+
+    </View>
+    
+    );
 }
+
+const styles= StyleSheet.create({
+    container:{
+      padding:"5%",
+  },
+  scroller:{
+    display:"flex",
+    flexDirection:"row",
+    justifyContent:"space-between",
+    flexWrap:"wrap",
+    marginTop:"5%",
+},
+slider:{
+  display:"flex",
+  flexDirection:"row",
+  justifyContent:"space-between",
+  marginTop:"5%",
+  bottom:30
+
+  },
+});
+

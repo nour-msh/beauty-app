@@ -4,7 +4,7 @@ const Category = ({textCat}) =>{
 return(
 <View style={styles.catView}>
     <View style={styles.cat}></View>
-    <Text style={{paddingTop:"3%"}}>{textCat}</Text>
+    <Text>{textCat}</Text>
 </View>
         )
 }

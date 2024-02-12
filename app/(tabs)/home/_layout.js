@@ -12,5 +12,6 @@ return < Stack screenOptions={{
 
 <Stack.Screen name="index"/>
 <Stack.Screen name="services" />
+<Stack.Screen name="bookAppointment" />
 </Stack>
 }

@@ -10,7 +10,7 @@ export default function Profile() {
 
     <View style={styles.prof}>
       <View style={styles.profImage}></View>
-      <Text style={{fontSize:21, color:"#FE6778", padding:"5%"}}>Nour Mshawrab</Text>
+      <Text style={{fontSize:21, color:"#FE6778", padding:"5%", fontWeight:600}}>Nour Mshawrab</Text>
       <Input label="Full Name"/>
       <Input label="Email"/>
       <Input label="Password"/>

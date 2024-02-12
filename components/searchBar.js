@@ -31,7 +31,8 @@ const styles=StyleSheet.create({
     barInside:{
         display:"flex",
         flexDirection:"row",
-        padding:5
+        padding:5,
+        gap:10
     },
 
 })

@@ -1,5 +1,5 @@
 import {Text, View, StyleSheet, Image} from "react-native";
-import {useRouter} from "expo-router";
+import {useRouter, Link} from "expo-router";
 import Input from "../components/input.js";
 import { LinearGradient } from 'expo-linear-gradient';
 import Button from "../components/button.js";
@@ -24,7 +24,11 @@ export default function Signup() {
         <Button title="Sign Up"/>
 </View>
         
-        <Text style={styles.passText} >Already have an account? <Text style={{color:"#FE6778", fontWeight:"500"}}>Login</Text></Text>
+        <Text style={styles.passText} >Already have an account? <Link href={'/index'}>
+        <Text style={{color:"#FE6778", fontWeight:"500"}}> Login </Text>
+        </Link>
+        </Text>
+    
 
     </View>
 </LinearGradient>

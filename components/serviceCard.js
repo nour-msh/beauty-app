@@ -21,7 +21,7 @@ const styles= StyleSheet.create({
         alignItems:"center",
         backgroundColor:"white",
         borderRadius:15,
-        marginBottom:"5%"
+        marginBottom:"10%"
 
     },
     service:{

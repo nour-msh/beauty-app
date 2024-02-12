@@ -2,8 +2,10 @@ import {Text, View, Button, StyleSheet, ScrollView, TouchableOpacity} from "reac
 import Box from "../../../components/box";
 import Category from "../../../components/category";
 import Service from "../../../components/serviceCard";
-import { Link, useRouter } from "expo-router";
-import { useNavigation } from "expo-router";
+import { useRouter } from "expo-router";
+import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
+
 
 export default function Home() {
     
@@ -13,13 +15,19 @@ export default function Home() {
       <View>
       <Box/>
       </View>
-            <View style={{bottom:120, paddingLeft:"5%"}}>
+      <View style={{display:"flex", justifyContent:"space-between", flexDirection:"row", bottom:120, paddingLeft:"5%", paddingRight:"5%"}}>
+        <View >
 
             <Text style={{fontWeight:300, fontSize:22, color:"white"}}>Welcome to</Text>
             <Text style={{fontWeight:800, fontSize:30 ,color:"white"}}>Beauty Salon</Text>
             </View>
+            <View style={{display:"flex", justifyContent:"space-between", flexDirection:"row", gap:10}}>
+            <Ionicons name="notifications-outline" size={24} color="black" />
+            <FontAwesome name="opencart" size={18} color="black" />
+            </View>
+        </View>
         <View style={styles.container}>
-            <Text style={{fontWeight:600}}> Popular Services</Text>
+            <Text style={{fontWeight:600, fontSize:16}}> Popular Services</Text>
             <ScrollView horizontal={true}>
 
             <View style={styles.slider}>

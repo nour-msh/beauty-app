@@ -19,11 +19,9 @@ const styles= StyleSheet.create({
         height:170,
         width:150,
         display:"flex",
-        // justifyContent:"center",
-        // alignItems:"center",
         backgroundColor:"white",
         borderRadius:15,
-        // marginBottom:"5%"
+        marginBottom:"10%"
 
     },
     productDetails:{

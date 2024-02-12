@@ -1,59 +1,12 @@
-import {Text, View, StyleSheet, Image} from "react-native";
-import {useRouter} from "expo-router";
-import Input from "../components/input.js";
-import { LinearGradient } from 'expo-linear-gradient';
-import Button from "../components/button.js";
+import { Redirect } from "expo-router";
+import BookAppointment from "./(tabs)/home/bookAppointment";
+import CartCard from "../components/cartCard";
+import PriceCard from "../components/priceCard";
+import Cart from "./(tabs)/home/cart";
 
-export default function Login() {
-    const router = useRouter();
-  return (
-    <LinearGradient colors={['#fff', '#fff', '#FFA4AE']} style={styles.linearGradient}>
-    <View style={{ flex:1, justifyContent:"center" , alignItems:"center", }}>
-      <Image 
-      style={styles.logo}
-      source={require("../assets/logo.png")}/>
-      <Text style={styles.loginText}>Login</Text>
-        <Input label="Email"/>
-        <Input label="Password"/>
-        <View style={styles.forgotText } >
-
-        <Text style={styles.passText } >Forgot Password?</Text>
-        </View>
-        <Button title="Login"/>
-        <Text style={styles.passText} >Don’t have an account? <Text style={{color:"#FE6778", fontWeight:"500"}}>Sign Up</Text></Text>
-
-    </View>
-</LinearGradient>
-
-
-  );
+export default function Index(){
+    return(
+        <Redirect href={"/(tabs)/home"}/>
+        // <Cart/>
+    )
 }
-
-const styles= StyleSheet.create({
-  logo:{
-  height: 200,
-  width:200,
-
-},
-linearGradient: {
-  flex: 1,
-  paddingLeft: 15,
-  paddingRight: 15,
-  borderRadius: 5
-},
-loginText:{
-  fontSize:28,
-  paddingBottom:"5%",
-  paddingTop:"5%"
-  
-},
-passText:{
-  fontSize:14,
-  color:"#A5A6A9",
-  padding:10,
-
-},
-forgotText:{
-marginRight:200}
-
-})

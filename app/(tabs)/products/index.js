@@ -14,10 +14,11 @@ const router= useRouter();
 <View style={styles.container}>
     <Search/>   
 
+<Text style={{fontWeight:600, bottom:30, fontSize:16}}>Products</Text>
     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
 <View style={styles.slider} > 
 <Button title="Lip Stick"
-  color="black" />
+  color="black"/>
   <Button title="Lip Tint"
   color="black" />
   <Button title="Eye Shadow"
@@ -27,7 +28,6 @@ const router= useRouter();
 
 </View>
 </ScrollView>
-    <Text style={{fontWeight:600}}>Products</Text>
 
     <ScrollView showsVerticalScrollIndicator={false}>
 

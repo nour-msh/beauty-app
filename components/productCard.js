@@ -1,16 +1,18 @@
-import { StyleSheet, View,Text} from "react-native";
+import { StyleSheet, View,Text, Image, TouchableOpacity} from "react-native";
 
-const Product = () =>{
+const ProductCard = ({product,onPress}) =>{
+    const {name, price, imageUrl}= product
 return(
-<View style={styles.productView}>
+<TouchableOpacity style={styles.productView} onPress={onPress}>
 
-        <View style={styles.productDetails}>
+        <Image source={imageUrl} style={{height:170, width:150}} />
+        <View style={styles.productDetails}> 
 
-        <Text style={{fontWeight:600}}>Title</Text>
-        <Text style={{fontWeight:600, color:"#FE6778"}}>$Price</Text>
+        <Text style={{fontWeight:600}}>{name}</Text>
+        <Text style={{fontWeight:600, color:"#FE6778"}}>{price}</Text>
         </View>
 
-</View>
+</TouchableOpacity>
         )
 }
 
@@ -30,8 +32,9 @@ const styles= StyleSheet.create({
         borderBottomRightRadius:10,
         borderBottomLeftRadius:10,
         backgroundColor:"#FFA4AE",
-        top:120,
+        // opacity:0.5,
         padding:"5%",
+        bottom:50,
         textAlign:"left",
 
 
@@ -39,4 +42,4 @@ const styles= StyleSheet.create({
   
 });
 
-export default Product
+export default ProductCard

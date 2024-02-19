@@ -1,40 +1,44 @@
-import { StyleSheet, View,Text} from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 
-const Service = () =>{
-return(
-<View style={styles.serviceView}>
-    <View style={styles.service}></View>
-    <View style={styles.serviceText}>
-        <Text style={{fontWeight:600}}>Title</Text>
-        <Text style={{fontWeight:600, color:"#FE6778"}}>$Price</Text>
-    </View>
-</View>
-        )
+
+const ServiceCard = ({ details, onPress }) => {
+    const { name, price, imageUrl } = details
+    
+
+
+    return (
+        <TouchableOpacity onPress={onPress} style={styles.serviceView}>
+            <View style={styles.service}><Image source={imageUrl} style={{height:114, width:125}}/></View>
+            <View style={styles.serviceText}>
+                <Text style={{ fontWeight: 600 }}>{name}</Text>
+                <Text style={{ fontWeight: 600, color: "#FE6778" }}>{price}</Text>
+
+            </View>
+        </TouchableOpacity>
+    )
 }
 
-const styles= StyleSheet.create({
-    serviceView:{
-        height:178,
-        width:150,
-        display:"flex",
-        justifyContent:"center",
-        alignItems:"center",
-        backgroundColor:"white",
-        borderRadius:15,
-        marginBottom:"10%"
+const styles = StyleSheet.create({
+    serviceView: {
+        height: 178,
+        width: 150,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "white",
+        borderRadius: 15,
+        marginBottom: 20
 
     },
-    service:{
-        height:114,
-        width:125,
-        borderRadius:10,
-        backgroundColor:"#FFA4AE",
+    service: {
+        borderRadius: 15,
     },
-    serviceText:{
-        padding:"5%",
-        textAlign:"left",
-        marginRight:80,
+    serviceText: {
+        marginTop:"2%",
+        
+        textAlign: "left",
+        
     }
 });
 
-export default Service
+export default ServiceCard

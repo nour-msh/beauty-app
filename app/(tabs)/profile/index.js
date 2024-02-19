@@ -1,23 +1,25 @@
 
-import { View,StyleSheet, Text } from "react-native";
+import { View,StyleSheet, Text, KeyboardAvoidingView,   Platform} from "react-native";
 import Input from "../../../components/input";
 
 export default function Profile() {
 
   return (
 
-    <View style={styles.profContainer}>
+      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+        <View style={styles.profContainer}>
 
-    <View style={styles.prof}>
-      <View style={styles.profImage}></View>
-      <Text style={{fontSize:21, color:"#FE6778", padding:"5%", fontWeight:600}}>Nour Mshawrab</Text>
-      <Input label="Full Name"/>
-      <Input label="Email"/>
-      <Input label="Password"/>
-      <Input label="Phone Number"/>
-    </View>
+        <View style={styles.prof}>
+            <View style={styles.profImage}></View>
+            <Text style={{fontSize:21, color:"#FE6778", padding:"5%", fontWeight:600}}>Nour Mshawrab</Text>
+            <Input label="Full Name"/>
+            <Input label="Email"/>
+            <Input label="Password"/>
+            <Input label="Phone Number"/>
+        </View>
 
-    </View>
+        </View>
+    </KeyboardAvoidingView>
   )};
 
   const styles =StyleSheet.create({
@@ -30,10 +32,9 @@ export default function Profile() {
         backgroundColor:"#f3f3f3",
         borderTopRightRadius:50,
         borderTopLeftRadius:50,
-        top:120,
+        top:100,
         paddingTop:"20%",
         display:"flex",
-        // justifyContent:"center",
         alignItems:"center"
       
     },

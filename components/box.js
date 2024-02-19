@@ -18,8 +18,8 @@ const styles = StyleSheet.create({
     box:{
         height:175,
         width:375,
-        borderBottomRightRadius:50,
-        borderBottomLeftRadius:50
+    borderBottomRightRadius:50,
+    borderBottomLeftRadius:50
         },
 }
     )

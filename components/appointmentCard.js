@@ -1,19 +1,20 @@
 import { StyleSheet, View,Text} from "react-native";
 
-const AppointmentCard = () =>{
+const AppointmentCard = ({appointment}) =>{
+    const {date,time, service_name, price}=appointment //destructuring
 return(
 <View style={styles.appointmentView}>
 
             <View style={styles.appText}>
 
-                    <Text style={{fontWeight:350}}>Monday 17 January, 2024</Text>
-                    <Text style={{fontWeight:350}}>10:00 AM</Text>
+                    <Text style={{fontWeight:"normal"}}>{date}</Text>
+                    <Text style={{fontWeight:"normal"}}> {time}</Text>
             </View>
 
             <View  style={styles.appText}>
 
-                    <Text style={{fontWeight:700, color:"#FE6778" , fontSize:21}}>Service Name</Text>
-                    <Text style={{fontWeight:700, color:"#FE6778" , fontSize:21}}>$Price</Text>
+                    <Text style={{fontWeight:"bold", color:"#FE6778" , fontSize:21}}> {service_name}</Text>
+                    <Text style={{fontWeight:"bold", color:"#FE6778" , fontSize:21}}>{price}</Text>
             </View>
 
 </View>
@@ -29,7 +30,7 @@ const styles= StyleSheet.create({
         backgroundColor:"white",
         borderRadius:15,
         padding:"5%",
-        marginBottom:"5%"
+        marginBottom:20
     },
     appointmentDetails:{ 
         padding:"5%",

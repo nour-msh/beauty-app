@@ -1,26 +1,32 @@
-import { StyleSheet, View,Text} from "react-native";
+import { StyleSheet, View, Image, Text } from "react-native";
 
-const Category = ({textCat}) =>{
-return(
-<View style={styles.catView}>
-    <View style={styles.cat}></View>
-    <Text>{textCat}</Text>
-</View>
-        )
+const Category = ({ cat, imageUrl }) => {
+    return (
+        <View style={styles.catView}>
+
+            <View style={styles.cat}>
+                <Image source={imageUrl} style={{
+                    height: 69,
+                    width: 69
+                }} />
+            </View>
+            <Text>{cat}</Text>
+        </View>
+    )
 }
 
-const styles= StyleSheet.create({
-    cat:{
-        height:69,
-        width:69,
-        borderRadius:50,
-        backgroundColor:"#FFA4AE",
-        marginRight:"3%",
+const styles = StyleSheet.create({
+    cat: {
+        height: 69,
+        width: 69,
+        borderRadius: 50,
+        backgroundColor: "#FFA4AE",
+        marginRight: 10,
     },
-    catView:{
-        display:"flex",
-        justifyContent:"center",
-        alignItems:"center"
+    catView: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
     }
 });
 

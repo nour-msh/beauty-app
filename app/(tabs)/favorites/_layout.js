@@ -11,6 +11,6 @@ return < Stack screenOptions={{
 }}>
 
 <Stack.Screen name="index"/>
-<Stack.Screen name="prodDetails" />
+
 </Stack>
 }

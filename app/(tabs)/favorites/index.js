@@ -1,19 +1,21 @@
-import {Text, View, ScrollView, Button, StyleSheet,TouchableOpacity} from "react-native";
-import {useRouter, Link} from "expo-router";
+import {Text, View, ScrollView, Button, StyleSheet} from "react-native";
+import {useRouter} from "expo-router";
 import Search from "../../../components/searchBar";
-import Product from "../../../components/productCard"
+import ProductCard from "../../../components/productCard"
 import Box from "../../../components/box";
+import { productItems } from "../../../mockdata/productItems";
 
 
 export default function Products() {
 const router= useRouter();
+
   return (
     <View>
 
     <Box/>
 <View style={styles.container}>
     <Search/>   
-<Text style={{fontWeight:600, bottom:30}}>Products</Text>
+<Text style={{fontWeight:600, bottom:30, fontSize:16}}>Products</Text>
 
     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
 <View style={styles.slider} > 
@@ -32,50 +34,11 @@ const router= useRouter();
     <ScrollView showsVerticalScrollIndicator={false}>
 
 
-    <View style={styles.scroller}>
-
-    <TouchableOpacity onPress={()=>{ router.push("/products/productDetails")
-                }}>
-
-   <Product/>
-</TouchableOpacity> 
-    <TouchableOpacity onPress={()=>{ router.push("/products/productDetails")
-                }}>
-
-   <Product/>
-</TouchableOpacity> 
-    <TouchableOpacity onPress={()=>{ router.push("/products/productDetails")
-                }}>
-
-   <Product/>
-</TouchableOpacity> 
-    <TouchableOpacity onPress={()=>{ router.push("/products/productDetails")
-                }}>
-
-   <Product/>
-</TouchableOpacity> 
-    <TouchableOpacity onPress={()=>{ router.push("/products/productDetails")
-                }}>
-
-   <Product/>
-</TouchableOpacity> 
-    <TouchableOpacity onPress={()=>{ router.push("/products/productDetails")
-                }}>
-
-   <Product/>
-</TouchableOpacity> 
-    <TouchableOpacity onPress={()=>{ router.push("/products/productDetails")
-                }}>
-
-   <Product/>
-</TouchableOpacity> 
-    <TouchableOpacity onPress={()=>{ router.push("/products/productDetails")
-                }}>
-
-   <Product/>
-</TouchableOpacity> 
-
-
+        <View style={styles.scroller}>
+      {productItems.map(item => (
+        <ProductCard onPress={()=>{ router.push(`/productDetails/${item.id}`)
+      }} key={item.id} product={(item)} />
+      ))}
     </View>
 </ScrollView>
 </View>

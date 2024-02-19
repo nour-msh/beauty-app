@@ -1,10 +1,11 @@
 
 import AppointmentCard from "../../../components/appointmentCard";
-import { ScrollView, StyleSheet, View,Text} from "react-native";
+import { ScrollView, StyleSheet, View,Text, FlatList} from "react-native";
 import { Ionicons } from '@expo/vector-icons';
+import { appData } from "../../../mockdata/appData";
 
 export default function Appointments() {
-
+   
     return (
 <>
 <View style={{display:"flex", flexDirection:"row", top:60, paddingLeft:"5%"}} >
@@ -13,26 +14,10 @@ export default function Appointments() {
     </View>
     <Text style={{fontWeight:600, fontSize:24}} > Appointments</Text>
 </View>
-        <ScrollView>
 <View style={styles.appContainer}>
 
-            <AppointmentCard/>
-            <AppointmentCard/>
-            <AppointmentCard/>
-            <AppointmentCard/>
-            <AppointmentCard/>
-            <AppointmentCard/>
-            <AppointmentCard/>
-            <AppointmentCard/>
-            <AppointmentCard/>
-            <AppointmentCard/>
-            <AppointmentCard/>
-            <AppointmentCard/>
-            <AppointmentCard/>
-            <AppointmentCard/>
-
+        <FlatList showsVerticalScrollIndicator={false} data={appData} keyExtractor={(item)=> {return item.id}} renderItem={({item})=>{return <AppointmentCard appointment={(item)}/>}}></FlatList>
 </View>
-        </ScrollView>
 
 </>
     )};
@@ -41,7 +26,8 @@ const styles=StyleSheet.create({
     appContainer:{
         display:"flex",
         justifyContent:"center",
-        alignItems:"center",top:100
+        alignItems:"center",
+        top:100
 
     }
 })

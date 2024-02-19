@@ -2,13 +2,21 @@
 import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
 import Button from "../../../components/button";
 import TimeButton from "../../../components/timeButton";
+import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from "expo-router";
 
 
 export default function BookAppointment () {
+const router= useRouter();
+
     return(
         <View style={styles.serviceContainer}>
             <View style={styles.imageContainer}>
 
+            <View style={{display:"flex", flexDirection:"row",justifyContent:"space-between",padding:"5%", bottom:120}}>
+                <Ionicons name="chevron-back" size={24} color="black" style={{top:"5%"}}/>
+                <Ionicons name="heart-circle" size={50} color="black" />
+            </View>
 </View>
 
 <View style={styles.infoContainer}>
@@ -29,7 +37,7 @@ export default function BookAppointment () {
 </ScrollView>
 <View style={{display:"flex", justifyContent:"center", alignItems:"center", paddingTop:"5%"}}>
 
-<Button title="Add to Cart"/>
+<Button title="Add to Cart" />
 </View>
 </View>
     </View>

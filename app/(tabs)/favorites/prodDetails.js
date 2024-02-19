@@ -2,11 +2,17 @@
 import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
 import Button from "../../../components/button";
 import ServiceButton from "../../../components/serviceButton";
+import { Ionicons } from '@expo/vector-icons';
+
 
 export default function productDetails () {
     return(
         <View style={styles.serviceContainer}>
             <View style={styles.imageContainer}>
+            <View style={{display:"flex", flexDirection:"row",justifyContent:"space-between",padding:"5%", bottom:120}}>
+                <Ionicons name="chevron-back" size={24} color="black" style={{top:"5%"}}/>
+                <Ionicons name="heart-circle" size={50} color="black" />
+            </View>
 
 </View>
 
